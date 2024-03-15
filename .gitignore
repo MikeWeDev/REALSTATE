@@ -1,0 +1,94 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+<div className="flex  w-[100vw] h-[100vh] align-center">
+   <div className="image-container flex-1 h-[100vh] w-[100vw]">
+    <img src="images/black-friday-sale-decoration-background-with-shopping-trolley-copy-space_257995-187.webp" alt=""
+     className="h-[500px] w-[100vw] mt-2"/>   
+    </div>
+    <div className="info-container flex-1 p-[28px] mt-10">
+      <h1 className="text-[50px]">
+        POPULAR SAL
+      </h1>
+      <p className="my-[50px] text-[19px] font-blod">  
+      DONT CONPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW 
+      ARRIVAL
+      </p>
+      <button className="border p-3 border-black">
+        Shop Now
+      </button>
+    </div>
+   </div>
+
+   <div className="flex  w-[100vw] h-[100vh] align-center">
+   <div className="image-container flex-1 h-[100vh] w-[100vw]">
+    <img src="images/black-friday-sale-decoration-background-with-shopping-trolley-copy-space_257995-187.webp" alt=""
+     className="h-[500px] w-[100vw] mt-2"/>   
+    </div>
+    <div className="info-container flex-1 p-[28px] mt-10">
+      <h1 className="text-[50px]">
+        WINTER SAL
+      </h1>
+      <p className="my-[50px] text-[19px] font-blod">  
+      DONT CONPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW 
+      ARRIVAL
+      </p>
+      <button className="border p-3 border-black">
+        Shop Now
+      </button> Q
+    </div>
+   </div>
+
+
+ <div className="add ">+</div>
+        <div className="amount">2</div>
+        <div className="remove">-</div>
+       </div >
+
+
+
+
+
+       
+<div className="wrapper flex  w-[100vw] h-[100vh]">
+    {Data.map((iteam)=>{
+   <div className="flex  w-[100vw] h-[100vh] align-center">
+   <div className="image-container flex-1 h-[100vh] w-[100vw]">
+   <img src={iteam.img}
+     className="h-[500px] w-[100vw] mt-2"/>   
+    </div>
+    <div className="info-container flex-1 p-[28px] mt-10">
+      <h1 className="text-[50px]">
+        {iteam.title}
+      </h1>
+      <p className="my-[50px] text-[19px] font-blod">  
+        {iteam.desc}
+      </p>
+      <button className="border p-3 border-black">
+        SHOP NOW
+      </button>
+    </div>
+   </div>
+   })}

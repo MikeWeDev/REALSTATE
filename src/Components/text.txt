@@ -1,0 +1,27 @@
+   <ul className='lg:hidden  w-[200px] h-[150px] border- bg-white items-center gap-x '>
+             <div className='flex justify-between mb-4  '>
+              <span className="icon flex">
+               <TbHomeCheck size={35} className='bg-[#0ca39a] text-black px-2 rounded-full'/>
+               <span className='text-xl m-1 font-bold '>MIKE</span> 
+              </span>
+              <span className="button">
+                <button className='text-xl '>x</button>
+              </span>
+             </div> 
+             <div className='translate-x-[50%] '>
+             <button className='bg-[#0ca39a] text-black px-2 rounded-full'>Home</button>
+            <li className="py-2  mb-1 flex font-medium items-center leading-sung">About</li>
+            <li className="py-2 mb-1 flex font-medium items-cente  leading-sungr">Services</li>
+            <li className="py-2 mb-1 flex font-medium items-center leading-sung">Listing</li>
+            <li className="py-2 mb-1 flex font-medium items-center leading-sung">Blogs</li>
+            <div className="flex">
+        <span className="button">
+                <button className='text-md '>
+                  <span className='bg-[#0ca39a] text-black px-2 rounded-full'>
+                    LOGIN</span></button>
+              </span>
+        </div>
+
+            </div>
+              </ul>
+      
