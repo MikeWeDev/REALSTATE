@@ -69,7 +69,7 @@ function Who() {
           
           {/* Main Large Image (Positioned high) */}
           <img 
-            src="/82833577_587038971846970_217931..png" 
+            src="/who1.webp" 
             alt="Modern Real Estate View" 
             className="w-[60%] h-[400px] md:h-[550px] object-cover rounded-3xl shadow-2xl relative z-10 border-4 border-white"
           />
@@ -77,7 +77,7 @@ function Who() {
           {/* Smaller Overlapping Image (Positioned low and right) */}
           <div className="absolute top-[40%] right-0 w-[55%] h-[300px] md:h-[350px]">
             <img 
-              src="/82833577_587038971846970_217931..png" 
+              src="/who2.avif" 
               alt="Interior design example" 
               className="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-white"
             />

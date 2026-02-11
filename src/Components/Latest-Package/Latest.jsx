@@ -159,10 +159,10 @@ export default Latest;
 
 // Data definition remains unchanged, just moved to the end for better code flow
 const data = [
-    { img: "82833577_587038971846970_217931..png", id: 1, price: "$5,900/mo" },
-    { img: "OIP (1).png", id: 2, price: "$5,900/mo" },
-    { img: "OIP3.png", id: 3, price: "$5,900/mo" },
-    { img: "R4.png", id: 4, price: "$5,900/mo" },
-    { img: "OIP3.png", id: 5, price: "$5,900/mo" },
-    { img: "R4.png", id: 6, price: "$5,900/mo" },
+    { img: "/latest-property1.avif", id: 1, price: "$5,900/mo" },
+    { img: "/latest-property2.jpg", id: 2, price: "$5,900/mo" },
+    { img: "/latest-property3.jpeg", id: 3, price: "$5,900/mo" },
+    { img: "/latest-property4.jpg", id: 4, price: "$5,900/mo" },
+    { img: "/latest-property5.png", id: 5, price: "$5,900/mo" },
+    { img: "/latest-property6.jpg", id: 6, price: "$5,900/mo" },
 ];

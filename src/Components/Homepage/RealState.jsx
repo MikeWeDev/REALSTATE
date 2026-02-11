@@ -6,10 +6,10 @@ import { FaBuilding, FaCity, FaRegHandshake, FaTree, FaHome } from 'react-icons/
 
 // Updated data array (image slider data remains the same)
 const data = [
-  { img: "82833577_587038971846970_217931..png", id: 1 },
-  { img: "OIP (1).png", id: 2 },
-  { img: "OIP3.png", id: 3 },
-  { img: "R4.png", id: 4 },
+  { img: "/home1.jpg", id: 1 },
+  { img: "/home2.jpg", id: 2 },
+  { img: "/home3.avif", id: 3 },
+  { img: "/home4.jpg", id: 4 },
 ];
 
 // --- UPDATED: Professional Logo Data with Real Names and React Icons ---

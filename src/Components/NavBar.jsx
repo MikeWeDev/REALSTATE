@@ -79,8 +79,13 @@ function NavBar({
             >
               Agents
             </li>
+              <li 
+              onClick={() => scrollTo(reviewRef)}
+              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
+            >
+              Blog
+            </li>
 
-            {/* NEW ITEMS BELOW */}
 
             <li 
               onClick={() => scrollTo(listingRef)}
@@ -96,12 +101,7 @@ function NavBar({
               Neighborhood
             </li>
 
-            <li 
-              onClick={() => scrollTo(reviewRef)}
-              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
-            >
-              Blog
-            </li>
+          
           </ul>
 
           {/* Action Buttons */}

@@ -4,12 +4,12 @@ const ACCENT_COLOR = "text-[#0ca39a]"; // Teal accent
 
 // Define the data for the neighborhood cards (moved to the top for React best practice)
 const data = [
-  { img: "82833577_587038971846970_217931..png", id: 1, name: "City Center Lofts", count: "260 Properties" },
-  { img: "OIP (1).png", id: 2, name: "Sunset Hills Estates", count: "145 Properties" },
-  { img: "OIP3.png", id: 3, name: "The Waterfront District", count: "312 Properties" },
-  { img: "R4.png", id: 4, name: "Green Valley Commons", count: "198 Properties" },
-  { img: "OIP3.png", id: 5, name: "Downtown Towers", count: "400+ Properties" },
-  { img: "R4.png", id: 6, name: "Artisan Village", count: "95 Properties" },
+  { img: "/neighbor1.webp", id: 1, name: "City Center Lofts", count: "260 Properties" },
+  { img: "/neighbor2.webp", id: 2, name: "Sunset Hills Estates", count: "145 Properties" },
+  { img: "/neighbor3.avif", id: 3, name: "The Waterfront District", count: "312 Properties" },
+  { img: "/neighbor4.jpg", id: 4, name: "Green Valley Commons", count: "198 Properties" },
+  { img: "/neighbor5.jpeg", id: 5, name: "Downtown Towers", count: "400+ Properties" },
+  { img: "/neighbor6.jpg", id: 6, name: "Artisan Village", count: "95 Properties" },
 ];
 
 function Neghbour() {

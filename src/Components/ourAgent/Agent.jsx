@@ -7,21 +7,21 @@ const ACCENT_COLOR = "text-[#0ca39a]"; // Teal accent
 // --- UPDATED AGENT DATA ---
 const data = [
     {
-      img: "82833577_587038971846970_217931..png",
+      img: "/agent1.jpg",
       id: 1,
       name: "Samuel Johnson",
       position: "Chief Executive Officer",
       link: "#"
     },
     {
-      img: "OIP (1).png",
+      img: "/agent2.jpg",
       id: 2,
       name: "Michaela Nguyen",
       position: "Lead Development Manager",
       link: "#"
     },
     {
-      img: "OIP3.png",
+      img: "public/agent3.avif",
       id: 3,
       name: "Jodie K. Appleby",
       position: "Senior Buying Specialist",
@@ -29,7 +29,7 @@ const data = [
     },
     // Adding a fourth agent for a better 2x2 grid potential on tablets
     {
-        img: "R4.png", 
+        img: "/agent4.png", 
         id: 4, 
         name: "David Chen", 
         position: "Investment Analyst",
