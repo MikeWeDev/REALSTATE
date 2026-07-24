@@ -21,7 +21,7 @@ const data = [
       link: "#"
     },
     {
-      img: "public/agent3.avif",
+      img: "/agent3.avif",
       id: 3,
       name: "Jodie K. Appleby",
       position: "Senior Buying Specialist",
