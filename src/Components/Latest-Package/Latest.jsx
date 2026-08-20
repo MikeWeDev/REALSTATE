@@ -98,11 +98,12 @@ function Latest() {
                                 
                                 {/* Image Container */}
                                 <div className="h-64 relative">
-                                    <img 
-                                        src={item.img} 
-                                        alt={`Property listing ${item.id}`}
-                                        className="w-full h-full  rounded-t-3xl" 
-                                    />
+                                    <img
+    src={item.img}
+    alt={`Property listing ${item.id}`}
+    loading="lazy"
+    className="w-full h-full rounded-t-3xl object-cover"
+/>
                                     {/* Price Tag Overlay */}
                                     <span className="absolute top-4 left-4 bg-[#07452d] text-white text-lg font-bold px-4 py-2 rounded-xl shadow-lg">
                                         {item.price}
