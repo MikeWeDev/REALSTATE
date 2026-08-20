@@ -155,13 +155,19 @@ const RealState = () => {
             {/* Image Counter Indicator */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
                 {data.map((_, index) => (
-                    <div 
-                        key={index}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                            index === currentIndex ? 'bg-[#0ca39a] w-6' : 'bg-white/70'
-                        }`}
-                    ></div>
-                ))}
+  <button
+    key={index}
+    type="button"
+    onClick={() => setCurrentIndex(index)}
+    aria-label={`Go to property image ${index + 1}`}
+    aria-current={index === currentIndex ? "true" : undefined}
+    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+      index === currentIndex
+        ? "bg-[#0ca39a] w-6"
+        : "bg-white/70 hover:bg-white"
+    }`}
+  />
+))}
             </div>
           </div>
         </div>
