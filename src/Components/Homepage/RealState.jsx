@@ -132,20 +132,24 @@ const RealState = () => {
             
             {/* Slider Controls */}
             <div className="absolute inset-y-0 left-0 flex items-center p-4">
-              <button 
-                onClick={prevSlide} 
-                className="bg-white/30 backdrop-blur-sm text-white hover:text-[#0ca39a] p-3 rounded-full transition duration-300 hover:bg-white/80 shadow-lg"
-              >
-                <ArrowBack />
-              </button>
+             <button
+  type="button"
+  onClick={prevSlide}
+  aria-label="Previous property image"
+  className="bg-white/30 backdrop-blur-sm text-white hover:text-[#0ca39a] p-3 rounded-full transition duration-300 hover:bg-white/80 shadow-lg"
+>
+  <ArrowBack />
+</button>
             </div>
             <div className="absolute inset-y-0 right-0 flex items-center p-4">
-              <button 
-                onClick={nextSlide} 
-                className="bg-white/30 backdrop-blur-sm text-white hover:text-[#0ca39a] p-3 rounded-full transition duration-300 hover:bg-white/80 shadow-lg"
-              >
-                <ArrowForward />
-              </button>
+             <button
+  type="button"
+  onClick={nextSlide}
+  aria-label="Next property image"
+  className="bg-white/30 backdrop-blur-sm text-white hover:text-[#0ca39a] p-3 rounded-full transition duration-300 hover:bg-white/80 shadow-lg"
+>
+  <ArrowForward />
+</button>
             </div>
             
             {/* Image Counter Indicator */}
