@@ -59,14 +59,16 @@ function Latest() {
                 
                 {/* Navigation Arrows for Desktop/Tablet */}
                 <div className="hidden md:flex space-x-4">
-                    <button 
+                   <button
+    type="button"                        
                         onClick={prevSlide} 
                         className="p-3 border-2 border-[#0ca39a] text-[#0ca39a] rounded-full hover:bg-[#0ca39a] hover:text-white transition duration-300 shadow-md"
                         aria-label="Previous property"
                     >
                         <IoArrowBack className="w-5 h-5" />
                     </button>
-                    <button 
+                   <button
+    type="button"                        
                         onClick={nextSlide} 
                         className="p-3 border-2 border-[#0ca39a] text-[#0ca39a] rounded-full hover:bg-[#0ca39a] hover:text-white transition duration-300 shadow-md"
                         aria-label="Next property"
@@ -134,14 +136,16 @@ function Latest() {
 
                 {/* Navigation Arrows for Mobile (Overlay) */}
                 <div className="flex md:hidden justify-between absolute w-full top-1/3 px-2">
-                    <button 
+                   <button
+    type="button"                        
                         onClick={prevSlide} 
                         className="p-3 bg-white/70 backdrop-blur-sm border border-gray-200 text-[#07452d] rounded-full shadow-lg hover:bg-white transition duration-300"
                         aria-label="Previous property"
                     >
                         <IoArrowBack className="w-6 h-6" />
                     </button>
-                    <button 
+                   <button
+    type="button"                        
                         onClick={nextSlide} 
                         className="p-3 bg-white/70 backdrop-blur-sm border border-gray-200 text-[#07452d] rounded-full shadow-lg hover:bg-white transition duration-300"
                         aria-label="Next property"
