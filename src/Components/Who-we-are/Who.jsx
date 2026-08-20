@@ -68,19 +68,21 @@ function Who() {
         <div className="md:order-2 order-1 h-full min-h-[500px] relative">
           
           {/* Main Large Image (Positioned high) */}
-          <img 
-            src="/who1.webp" 
-            alt="Modern Real Estate View" 
-            className="w-[60%] h-[400px] md:h-[550px] object-cover rounded-3xl shadow-2xl relative z-10 border-4 border-white"
-          />
+         <img
+  src="/who1.webp"
+  alt="Modern Real Estate View"
+  loading="lazy"
+  className="w-[60%] h-[400px] md:h-[550px] object-cover rounded-3xl shadow-2xl relative z-10 border-4 border-white"
+/>
           
           {/* Smaller Overlapping Image (Positioned low and right) */}
           <div className="absolute top-[40%] right-0 w-[55%] h-[300px] md:h-[350px]">
-            <img 
-              src="/who2.avif" 
-              alt="Interior design example" 
-              className="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-white"
-            />
+            <img
+  src="/who2.avif"
+  alt="Interior design example"
+  loading="lazy"
+  className="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-white"
+/>
              {/* Small accent button/dot */}
             <button className={`bg-gradient-to-tr from-[#0ca39a] to-white rounded-full h-16 w-16 shadow-lg 
             absolute -bottom-6 -right-6 cursor-auto z-20 transform scale-100 hover:scale-105 transition duration-300`}>
