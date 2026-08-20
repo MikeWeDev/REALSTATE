@@ -34,10 +34,12 @@ function Neghbour() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           
           {data.map((item) => (
-            <div 
-              key={item.id} 
-              className="group relative overflow-hidden rounded-3xl shadow-xl transition-all duration-500 cursor-pointer"
-            >
+            <div
+  key={item.id}
+  role="article"
+  aria-label={`${item.name}, ${item.count}`}
+  className="group relative overflow-hidden rounded-3xl shadow-xl transition-all duration-500 focus-within:ring-4 focus-within:ring-[#0ca39a]/40"
+>
               
               {/* Image with Zoom Effect */}
              <img
