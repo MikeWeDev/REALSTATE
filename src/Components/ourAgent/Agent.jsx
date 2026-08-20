@@ -65,11 +65,12 @@ function Agent() {
                 
                 {/* Image Container */}
                 <div className="relative h-72 w-full overflow-hidden">
-                    <img 
-                        src={agent.img} 
-                        alt={agent.name}
-                        className="w-full h-full object-cover transition duration-500 group-hover:scale-105" 
-                    />
+                   <img
+  src={agent.img}
+  alt={agent.name}
+  loading="lazy"
+  className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+/>
                     
                     {/* Social/Link Overlay on Hover */}
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
