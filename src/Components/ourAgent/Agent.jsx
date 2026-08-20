@@ -78,8 +78,7 @@ function Agent() {
                             href={agent.link} 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] transition duration-300"
-                            aria-label={`LinkedIn profile of ${agent.name}`}
+className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] focus:ring-offset-2 transition duration-300"                            aria-label={`LinkedIn profile of ${agent.name}`}
                         >
                             <FaLinkedin className="w-5 h-5" />
                         </a>
@@ -87,8 +86,7 @@ function Agent() {
                             href={agent.link} 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] transition duration-300"
-                            aria-label={`Twitter profile of ${agent.name}`}
+className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] focus:ring-offset-2 transition duration-300"                            aria-label={`Twitter profile of ${agent.name}`}
                         >
                             <FaTwitter className="w-5 h-5" />
                         </a>
