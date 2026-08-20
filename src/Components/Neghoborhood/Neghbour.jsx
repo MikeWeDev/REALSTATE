@@ -40,12 +40,12 @@ function Neghbour() {
             >
               
               {/* Image with Zoom Effect */}
-              <img 
-                src={item.img} 
-                alt={item.name}
-                // Aspect ratio for consistent card size
-                className="w-full h-80 lg:h-96 object-cover transition duration-500 group-hover:scale-105" 
-              />
+             <img
+  src={item.img}
+  alt={item.name}
+  loading="lazy"
+  className="w-full h-80 lg:h-96 object-cover transition duration-500 group-hover:scale-105"
+/>
               
               {/* Overlay for Darkening and Text Background */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent transition duration-500 group-hover:bg-black/60"></div>
