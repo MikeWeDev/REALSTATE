@@ -57,8 +57,10 @@ function Service() {
               {/* Icon Section */}
               <div className="flex justify-center mb-6">
                 <span className={`text-5xl p-4 rounded-xl shadow-lg ${service.color.replace('text-', 'bg-')} transition duration-300`}>
-                  <service.icon className="text-white w-8 h-8"/>
-                </span> 
+<service.icon
+  aria-hidden="true"
+  className="text-white w-8 h-8"
+/>                </span> 
               </div>
               
               {/* Title */}
