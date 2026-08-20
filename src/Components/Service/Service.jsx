@@ -47,10 +47,9 @@ function Service() {
         {/* --- Service Cards Container --- */}
         <div className="flex flex-col md:flex-row gap-8 lg:gap-12 justify-center mt-16 md:mt-24">
           
-          {serviceData.map((service, index) => (
-            // Card structure updated for modern look (shadow, rounded corners, hover effect)
-            <div 
-              key={index} 
+        {serviceData.map((service) => (
+  <div
+    key={service.title}
               className="w-full max-w-sm p-8 bg-white rounded-3xl shadow-xl border border-gray-100 
                          transition duration-500 hover:shadow-2xl hover:border-transparent transform hover:-translate-y-2"
             >
