@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home"; // Extract your current App content into Home
 import Login from "./Components/auth/Login";
-import Register from "./Components/auth/Rigister";
+import Register from "./Components/auth/Register";
 
 function App() {
   return (

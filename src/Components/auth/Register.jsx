@@ -1,6 +1,6 @@
 import {useState} from "react"
 
-function Rigister() {
+function Register() {
  // Using more semantic state names for clarity
  const [lastName, setLastName] = useState("")
  const [firstName, setFirstName] = useState("")
@@ -111,4 +111,4 @@ function Rigister() {
   )
 }
 
-export default Rigister
+export default Register

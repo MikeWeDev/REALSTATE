@@ -54,6 +54,9 @@ function NavBar({
           <ul className='hidden md:flex items-center gap-x-8 list-none'>
             <li 
               onClick={() => scrollTo(realStateRef)}
+              onKeyDown={(e) => e.key === "Enter" && scrollTo(realStateRef)}
+              role="button"
+              tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
             >
               Home
@@ -61,6 +64,9 @@ function NavBar({
 
             <li 
               onClick={() => scrollTo(whoRef)}
+              onKeyDown={(e) => e.key === "Enter" && scrollTo(whoRef)}
+              role="button"
+              tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
             >
               About
@@ -68,6 +74,9 @@ function NavBar({
 
             <li 
               onClick={() => scrollTo(serviceRef)}
+              onKeyDown={(e) => e.key === "Enter" && scrollTo(serviceRef)}
+              role="button"
+              tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
             >
               Services
@@ -75,12 +84,18 @@ function NavBar({
 
             <li 
               onClick={() => scrollTo(agentRef)}
+              onKeyDown={(e) => e.key === "Enter" && scrollTo(agentRef)}
+              role="button"
+              tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
             >
               Agents
             </li>
               <li 
               onClick={() => scrollTo(reviewRef)}
+              onKeyDown={(e) => e.key === "Enter" && scrollTo(reviewRef)}
+              role="button"
+              tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
             >
               Blog
@@ -89,6 +104,9 @@ function NavBar({
 
             <li 
               onClick={() => scrollTo(listingRef)}
+              onKeyDown={(e) => e.key === "Enter" && scrollTo(listingRef)}
+              role="button"
+              tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
             >
               Listing
@@ -96,6 +114,9 @@ function NavBar({
 
             <li 
               onClick={() => scrollTo(neighbourhoodRef)}
+              onKeyDown={(e) => e.key === "Enter" && scrollTo(neighbourhoodRef)}
+              role="button"
+              tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
             >
               Neighborhood

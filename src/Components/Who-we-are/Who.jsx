@@ -84,10 +84,8 @@ function Who() {
   className="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-white"
 />
              {/* Small accent button/dot */}
-            <button className={`bg-gradient-to-tr from-[#0ca39a] to-white rounded-full h-16 w-16 shadow-lg 
-            absolute -bottom-6 -right-6 cursor-auto z-20 transform scale-100 hover:scale-105 transition duration-300`}>
-                <span className="sr-only">Decoration</span>
-            </button>
+            <div aria-hidden="true" className={`bg-gradient-to-tr from-[#0ca39a] to-white rounded-full h-16 w-16 shadow-lg 
+            absolute -bottom-6 -right-6 cursor-auto z-20 transform scale-100 hover:scale-105 transition duration-300`}></div>
           </div>
 
           {/* Hidden Image (Removed for cleaner design, keeping two main images) */}
