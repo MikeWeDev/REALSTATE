@@ -12,7 +12,7 @@ const data = [
   { img: "/neighbor6.jpg", id: 6, name: "Artisan Village", count: "95 Properties" },
 ];
 
-function Neghbour() {
+function Neighbor() {
   return (
     <div className="py-20 md:py-32 bg-white">
       
@@ -74,4 +74,4 @@ function Neghbour() {
   );
 }
 
-export default Neghbour;
+export default Neighbor;
