@@ -5,7 +5,7 @@ import RealState from './Components/Homepage/RealState'
 import Who from './Components/Who-we-are/Who'
 import Latest from './Components/Latest-Package/Latest'
 import Service from './Components/Service/Service'
-import Neghbour from './Components/Neighborhood/Neghbour'
+import Neighbor from './Components/Neighborhood/Neighbor'
 import Agent from './Components/ourAgent/Agent'
 import Review from './Components/ourAgent/review/Review'
 
@@ -40,7 +40,7 @@ export default function Home() {
         <div ref={agentRef}><Agent /></div>
         <div ref={reviewRef}><Review /></div> 
         <div ref={listingRef}><Latest /></div>
-        <div ref={neighbourhoodRef}><Neghbour /></div>
+        <div ref={neighbourhoodRef}><Neighbor /></div>
       </main>
 
       <Footer />
