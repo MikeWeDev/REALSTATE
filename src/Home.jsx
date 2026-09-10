@@ -1,11 +1,11 @@
 import { useRef } from "react";
 import NavBar from './Components/NavBar'
-import Fotter from  './Components/Fotter'
+import Footer from './Components/Footer'
 import RealState from './Components/Homepage/RealState'
 import Who from './Components/Who-we-are/Who'
 import Latest from './Components/Latest-Package/Latest'
 import Service from './Components/Service/Service'
-import Neghbour from './Components/Neghoborhood/Neghbour'
+import Neghbour from './Components/Neighborhood/Neghbour'
 import Agent from './Components/ourAgent/Agent'
 import Review from './Components/ourAgent/review/Review'
 
@@ -43,7 +43,7 @@ export default function Home() {
         <div ref={neighbourhoodRef}><Neghbour /></div>
       </main>
 
-      <Fotter />
+      <Footer />
     </>
   );
 }
