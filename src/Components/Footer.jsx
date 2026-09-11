@@ -97,8 +97,6 @@ function Footer() {
                 role="button"
                 tabIndex={0}
                 className="cursor-pointer hover:text-teal-500 transition duration-300"
-                onClick={() => console.log(`${link} clicked`)}
-                onKeyDown={(e) => e.key === 'Enter' && console.log(`${link} clicked`)}
               >
                 {link}
               </li>
