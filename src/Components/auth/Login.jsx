@@ -8,8 +8,11 @@ function Login() {
     e.preventDefault(); // Prevents page reload
     setPassword("");
     setUsername("");
-    // TODO: Connect to backend authentication service
-    console.log('Login attempt:', { username });
+    alert(`SIGN IN SUCCESSFUL (UI DEMO FOR ${username})`)
+ }
+ 
+  return (
+    // Full-screen container with a rich gradient background
     <div className="min-h-screen flex items-center justify-center 
         bg-gradient-to-tr from-blue-700 via-indigo-700 to-purple-800 
         p-4">

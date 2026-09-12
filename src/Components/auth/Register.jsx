@@ -12,7 +12,11 @@ function Register() {
     // Prevent default form submission behavior to keep state values for demonstration
     e.preventDefault(); 
     // Add actual validation logic here (e.g., check if passwords match)
-    console.log('Registration attempt:', { firstName, lastName, emailOrUsername });
+    alert("SUCCESSFULLY REGISTERED (UI DEMO)")
+    
+    // Clear form fields
+    setConfirmPassword("")
+    setFirstName("")
     setPassword("")
     setLastName("")
     setEmailOrUsername("")
