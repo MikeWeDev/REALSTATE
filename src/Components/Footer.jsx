@@ -48,15 +48,18 @@ function Footer() {
             Useful Links
           </h2>
           <div className="links space-y-2">
-            {['Home', 'About', 'Men Fashion', 'Women Fashion', 'Accessories', 'Order'].map((link) => (
+            {['Home', 'About', 'Services', 'Listings', 'Neighborhood', 'Contact'].map((link) => (
               // 💅 Added hover effect and smaller text for list items
-              <a 
-                key={link} 
-                href="#" 
-                className="block text-sm text-gray-400 hover:text-teal-500 transition duration-300"
+              <button 
+                key={link}
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log(`Navigate to ${link}`);
+                }}
+                className="block w-full text-left text-sm text-gray-400 hover:text-teal-500 transition duration-300 bg-none border-none cursor-pointer p-0"
               >
                 {link}
-              </a>
+              </button>
             ))}
           </div>
         </div>

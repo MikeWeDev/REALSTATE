@@ -10,30 +10,26 @@ const data = [
       img: "/agent1.jpg",
       id: 1,
       name: "Samuel Johnson",
-      position: "Chief Executive Officer",
-      link: "#"
+      position: "Chief Executive Officer"
     },
     {
       img: "/agent2.jpg",
       id: 2,
       name: "Michaela Nguyen",
-      position: "Lead Development Manager",
-      link: "#"
+      position: "Lead Development Manager"
     },
     {
       img: "/agent3.avif",
       id: 3,
       name: "Jodie K. Appleby",
-      position: "Senior Buying Specialist",
-      link: "#"
+      position: "Senior Buying Specialist"
     },
     // Adding a fourth agent for a better 2x2 grid potential on tablets
     {
         img: "/agent4.png", 
         id: 4, 
         name: "David Chen", 
-        position: "Investment Analyst",
-        link: "#"
+        position: "Investment Analyst"
     },
 ];
 // --- END AGENT DATA ---
@@ -74,22 +70,20 @@ function Agent() {
                     
                     {/* Social/Link Overlay on Hover */}
                     <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-500">
-                        <a 
-                            href={agent.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] focus:ring-offset-2 transition duration-300"                            aria-label={`LinkedIn profile of ${agent.name}`}
+                        <button 
+                            onClick={() => console.log(`LinkedIn: ${agent.name}`)}
+                            aria-label={`LinkedIn profile of ${agent.name}`}
+                            className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] focus:ring-offset-2 transition duration-300 border-none cursor-pointer"
                         >
                             <FaLinkedin className="w-5 h-5" />
-                        </a>
-                        <a 
-                            href={agent.link} 
-                            target="_blank" 
-                            rel="noopener noreferrer" 
-className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] focus:ring-offset-2 transition duration-300"                            aria-label={`Twitter profile of ${agent.name}`}
+                        </button>
+                        <button 
+                            onClick={() => console.log(`Twitter: ${agent.name}`)}
+                            aria-label={`Twitter profile of ${agent.name}`}
+                            className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] focus:ring-offset-2 transition duration-300 border-none cursor-pointer"
                         >
                             <FaTwitter className="w-5 h-5" />
-                        </a>
+                        </button>
                     </div>
                 </div>
                 
