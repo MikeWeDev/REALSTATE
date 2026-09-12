@@ -37,28 +37,28 @@ const ACCENT_COLOR = "text-[#0ca39a]"; // Teal accent
 
 const data = [
     {
-        img: "82833577_587038971846970_217931..png",
+        img: "/reviewer1.jpg",
         id: 1,
         name: "Samantha J.",
         position: "First-Time Home Buyer",
         review: "The agents were incredibly attentive and helped us navigate a complex closing process with ease. They found us the perfect family home faster than we expected!"
     },
     {
-        img: "OIP (1).png",
+        img: "/reviewer2.jpg",
         id: 2,
         name: "Michael N.",
         position: "Real Estate Investor",
         review: "Their market analysis was spot-on, securing us a fantastic ROI on our latest development project. Professional, knowledgeable, and highly recommended."
     },
     {
-        img: "OIP3.png",
+        img: "/reviewer3.jpg",
         id: 3,
         name: "Jodi Appleby",
         position: "Seller, City Lofts",
         review: "Selling my property felt effortless. The team's marketing strategy was brilliant, leading to multiple offers above the asking price within the first week."
     },
     {
-        img: "R4.png", // Using R4.png for the fourth item
+        img: "/reviewer4.jpg",
         id: 4,
         name: "David T.",
         position: "Property Developer",
