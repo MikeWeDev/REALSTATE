@@ -57,7 +57,7 @@ function NavBar({
               onKeyDown={(e) => e.key === "Enter" && scrollTo(realStateRef)}
               role="button"
               tabIndex={0}
-              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
+              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
             >
               Home
             </li>
@@ -67,7 +67,7 @@ function NavBar({
               onKeyDown={(e) => e.key === "Enter" && scrollTo(whoRef)}
               role="button"
               tabIndex={0}
-              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
+              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
             >
               About
             </li>
@@ -77,7 +77,7 @@ function NavBar({
               onKeyDown={(e) => e.key === "Enter" && scrollTo(serviceRef)}
               role="button"
               tabIndex={0}
-              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
+              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
             >
               Services
             </li>
@@ -87,7 +87,7 @@ function NavBar({
               onKeyDown={(e) => e.key === "Enter" && scrollTo(agentRef)}
               role="button"
               tabIndex={0}
-              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
+              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
             >
               Agents
             </li>
@@ -96,7 +96,7 @@ function NavBar({
               onKeyDown={(e) => e.key === "Enter" && scrollTo(reviewRef)}
               role="button"
               tabIndex={0}
-              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
+              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
             >
               Blog
             </li>
@@ -107,7 +107,7 @@ function NavBar({
               onKeyDown={(e) => e.key === "Enter" && scrollTo(listingRef)}
               role="button"
               tabIndex={0}
-              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
+              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
             >
               Listing
             </li>
@@ -117,7 +117,7 @@ function NavBar({
               onKeyDown={(e) => e.key === "Enter" && scrollTo(neighbourhoodRef)}
               role="button"
               tabIndex={0}
-              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer"
+              className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
             >
               Neighborhood
             </li>
