@@ -27,16 +27,16 @@ function Footer() {
           
           {/* 🔗 Social Icons: Using imported react-icons for consistency & color */}
           <div className="social-icons flex space-x-3 mt-6" role="list">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-8 h-8 p-1.5 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0ca39a]">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-8 h-8 p-1.5 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]">
               <FaFacebookF />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-8 h-8 p-1.5 rounded-full bg-cyan-400 text-white hover:bg-cyan-500 transition duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0ca39a]">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-8 h-8 p-1.5 rounded-full bg-cyan-400 text-white hover:bg-cyan-500 transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]">
               <FaTwitter />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-8 h-8 p-1.5 rounded-full bg-pink-600 text-white hover:bg-pink-700 transition duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0ca39a]">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-8 h-8 p-1.5 rounded-full bg-pink-600 text-white hover:bg-pink-700 transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]">
               <FaInstagram />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-8 h-8 p-1.5 rounded-full bg-red-600 text-white hover:bg-red-700 transition duration-300 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#0ca39a]">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-8 h-8 p-1.5 rounded-full bg-red-600 text-white hover:bg-red-700 transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]">
               <FaYoutube />
             </a>
           </div>
@@ -56,7 +56,7 @@ function Footer() {
                   e.preventDefault();
                   console.log(`Navigate to ${link}`);
                 }}
-                className="block w-full text-left text-sm text-gray-400 hover:text-teal-500 transition duration-300 bg-none border-none cursor-pointer p-0"
+                className="block w-full text-left text-sm text-gray-400 hover:text-teal-500 transition duration-300 bg-none border-none cursor-pointer p-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
               >
                 {link}
               </button>
