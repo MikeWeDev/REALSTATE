@@ -127,15 +127,15 @@ function NavBar({
 
           {/* Action Buttons */}
           <div className="flex items-center gap-x-4">
-           <Link 
+           <Link
     to="/login"
-    className='text-sm font-semibold text-gray-600 hover:text-[#0ca39a] transition duration-300'
+    className='text-sm font-semibold text-gray-600 hover:text-[#0ca39a] transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded'
   >
     LOGIN
   </Link>
-             <Link 
+             <Link
     to="/register"
-    className='bg-[#0ca39a] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#098e85] transition duration-300 shadow-md'
+    className='bg-[#0ca39a] text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-[#098e85] transition duration-300 shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2'
   >
     REGISTER
   </Link>
