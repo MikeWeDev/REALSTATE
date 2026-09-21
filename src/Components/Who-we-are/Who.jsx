@@ -6,13 +6,13 @@ function Who() {
   const ACCENT_COLOR = "text-[#0ca39a]"; // Teal accent
 
   return (
-    <main className="relative container mx-auto px-4 py-20 md:py-32 overflow-hidden">
+    <main className="relative container mx-auto px-4 py-16 md:py-32">
       
       {/* Decorative Blur Element (Optional but adds depth) */}
       <div className="absolute top-1/4 left-0 w-60 h-60 bg-[#0ca39a] opacity-10 rounded-full filter blur-3xl hidden md:block z-0"></div>
 
       {/* Main Content Grid (replaces flex layout for better control) */}
-      <div className="relative z-10 grid md:grid-cols-2 gap-16 items-center">
+      <div className="relative z-10 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
         
         {/* --- Left Side: Content Block --- */}
         <div className="md:order-1 order-2">
@@ -21,10 +21,10 @@ function Who() {
           <p className={`${PRIMARY_COLOR} text-lg font-bold uppercase tracking-widest mb-3`}>
             WHO ARE WE
           </p>
-          <h1 className={`text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6`}>
+          <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 leading-tight mb-6`}>
             Assisting individuals in locating the <span className={ACCENT_COLOR}>appropriate</span> real estate
           </h1>
-          <p className="max-w-xl text-gray-600 text-lg mb-12">
+          <p className="max-w-xl text-gray-600 text-base sm:text-lg mb-8 sm:mb-12">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos blanditiis ipsam obcaecati amet quaerat ad porro nam odio dolorum libero?
           </p>
 
@@ -65,31 +65,30 @@ function Who() {
         {/* --- End Content Block --- */}
 
         {/* --- Right Side: Image Collage Block --- */}
-        <div className="md:order-2 order-1 h-full min-h-[500px] relative">
+        <div className="md:order-2 order-1 relative pb-10 md:pb-0">
           
-          {/* Main Large Image (Positioned high) */}
-         <img
-  src="/who1.webp"
-  alt="Modern Real Estate View"
-  loading="lazy"
-  className="w-[60%] h-[400px] md:h-[550px] object-cover rounded-3xl shadow-2xl relative z-10 border-4 border-white"
-/>
+          {/* Main Large Image */}
+          <img
+            src="/who1.webp"
+            alt="Modern Real Estate View"
+            loading="lazy"
+            className="w-[65%] aspect-[4/5] object-cover rounded-3xl shadow-2xl relative z-10 border-4 border-white"
+          />
           
-          {/* Smaller Overlapping Image (Positioned low and right) */}
-          <div className="absolute top-[40%] right-0 w-[55%] h-[300px] md:h-[350px]">
+          {/* Smaller Overlapping Image */}
+          <div className="absolute bottom-0 right-0 w-[55%] aspect-square z-20">
             <img
-  src="/who2.avif"
-  alt="Interior design example"
-  loading="lazy"
-  className="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-white"
-/>
-             {/* Small accent button/dot */}
-            <div aria-hidden="true" className={`bg-gradient-to-tr from-[#0ca39a] to-white rounded-full h-16 w-16 shadow-lg 
-            absolute -bottom-6 -right-6 cursor-auto z-20 transform scale-100 hover:scale-105 transition duration-300`}></div>
+              src="/who2.avif"
+              alt="Interior design example"
+              loading="lazy"
+              className="w-full h-full object-cover rounded-3xl shadow-xl border-4 border-white"
+            />
+            {/* Small accent button/dot */}
+            <div 
+              aria-hidden="true" 
+              className="bg-gradient-to-tr from-[#0ca39a] to-white rounded-full h-12 w-12 sm:h-16 sm:w-16 shadow-lg absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 cursor-auto z-30 transform scale-100 hover:scale-105 transition duration-300"
+            ></div>
           </div>
-
-          {/* Hidden Image (Removed for cleaner design, keeping two main images) */}
-          {/* The third image slot is now replaced by better positioning and accent */}
 
         </div>
         {/* --- End Image Collage Block --- */}
