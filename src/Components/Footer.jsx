@@ -89,7 +89,7 @@ function Footer() {
         <div className="lg:flex justify-between items-center text-sm">
           {/* 📝 Stronger Copyright Text */}
           <p className="text-center lg:text-left text-gray-500 mb-4 lg:mb-0">
-            &copy; {new Date().getFullYear()} **MIKE** - All Rights Reserved.
+            &copy; {new Date().getFullYear()} <strong className="text-gray-400">MIKE</strong> - All Rights Reserved.
           </p>
           
           {/* 📜 Legal Links with proper spacing and divider */}
