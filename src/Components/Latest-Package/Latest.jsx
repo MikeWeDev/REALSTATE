@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import { FaBed, FaBath } from "react-icons/fa";
 
-// Sample property dataset
+
 const data = [
     { img: "/latest-property1.avif", id: 1, price: "$5,900/mo", title: "Modern Downtown Apartment", location: "123 Main St, Cityville, USA" },
     { img: "/latest-property2.jpg", id: 2, price: "$5,900/mo", title: "Luxury Horizon Villa", location: "456 Ocean Ave, Beachside, USA" },
