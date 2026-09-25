@@ -76,8 +76,8 @@ const RealState = () => {
   return (
     <main className="min-h-screen bg-gray-50 font-sans">
       
-      {/* Inject custom styles for the scrolling animation */}
-      <style dangerouslySetInnerHTML={{ __html: scrollingStyle }} />
+      // Animation defined in tailwind.config.js - no inline styles needed
+      // Animation defined in tailwind.config.js - no inline styles needed
 
       {/* --- 1. Hero Section: Content & Slider (unchanged) --- */}
       <div className="container mx-auto px-4 pt-16 pb-24">

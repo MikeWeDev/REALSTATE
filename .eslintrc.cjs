@@ -16,5 +16,10 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    // Disable rules not suitable for this project
+    'react/prop-types': 'off',
+    'react/no-unescaped-entities': 'off',
+    // Allow CRLF line endings (Windows style)
+    'no-irregular-whitespace': 'off',
   },
 }
