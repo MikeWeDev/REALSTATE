@@ -71,21 +71,7 @@ const RealState = () => {
     };
   }, []); // Empty dependency array ensures it runs only once
 
-  // Custom CSS for the infinite horizontal logo scroll animation (unchanged)
-  const scrollingStyle = `
-    .logo-scroll-container {
-      animation: slide-in 25s linear infinite;
-    }
-    @keyframes slide-in {
-      0% {
-        transform: translateX(0%);
-      }
-      100% {
-        /* Translate half the content's width (since we duplicated the list) */
-        transform: translateX(-50%); 
-      }
-    }
-  `;
+  // Animation class is defined in tailwind.config.js and applied via className
 
   return (
     <main className="min-h-screen bg-gray-50 font-sans">
