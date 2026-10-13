@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   FaBuilding,
   FaCity,
@@ -29,13 +30,12 @@ const logoData = [...defaultLogoData, ...defaultLogoData];
 
 // Logo icon component
 const LogoIcon = ({ Icon, colorClass }) => (
-  <Icon className={`w-8 h-8 ${colorClass} mr-2`} />
+  <Icon className={`w-8 h-8 ${colorClass} mr-2`} aria-hidden="true" />
 );
 
 // Previous arrow
-const ArrowBack = (props) => (
+const ArrowBack = () => (
   <svg
-    {...props}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -53,9 +53,8 @@ const ArrowBack = (props) => (
 );
 
 // Next arrow
-const ArrowForward = (props) => (
+const ArrowForward = () => (
   <svg
-    {...props}
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 24 24"
@@ -125,9 +124,13 @@ const RealState = () => {
               architecto. Discover curated listings designed for your future.
             </p>
 
-            <button className="px-8 py-3 text-lg font-bold text-white bg-[#0ca39a] rounded-full shadow-lg shadow-[#0ca39a]/50 hover:bg-[#098e85] transition duration-300 transform hover:scale-[1.02]">
+            {/* Functional Listings Navigation */}
+            <Link
+              to="/listings"
+              className="inline-block px-8 py-3 text-lg font-bold text-white bg-[#0ca39a] rounded-full shadow-lg shadow-[#0ca39a]/50 hover:bg-[#098e85] hover:shadow-xl transition duration-300 transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]/40"
+            >
               Explore Listings
-            </button>
+            </Link>
           </div>
 
           {/* Slider Block */}
@@ -154,7 +157,7 @@ const RealState = () => {
                   className="w-full h-full flex-shrink-0 bg-gray-100 object-cover"
                   src={item.img}
                   alt={`Real Estate Slide ${index + 1}`}
-                  loading="lazy"
+                  loading={index === 0 ? "eager" : "lazy"}
                 />
               ))}
             </div>
@@ -165,7 +168,7 @@ const RealState = () => {
                 type="button"
                 onClick={prevSlide}
                 aria-label="Previous property image"
-                className="bg-white/30 backdrop-blur-sm text-white hover:text-[#0ca39a] p-3 rounded-full transition duration-300 hover:bg-white/80 shadow-lg"
+                className="bg-white/30 backdrop-blur-sm text-white hover:text-[#0ca39a] p-3 rounded-full transition duration-300 hover:bg-white/80 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]"
               >
                 <ArrowBack />
               </button>
@@ -177,7 +180,7 @@ const RealState = () => {
                 type="button"
                 onClick={nextSlide}
                 aria-label="Next property image"
-                className="bg-white/30 backdrop-blur-sm text-white hover:text-[#0ca39a] p-3 rounded-full transition duration-300 hover:bg-white/80 shadow-lg"
+                className="bg-white/30 backdrop-blur-sm text-white hover:text-[#0ca39a] p-3 rounded-full transition duration-300 hover:bg-white/80 shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]"
               >
                 <ArrowForward />
               </button>
@@ -192,7 +195,7 @@ const RealState = () => {
                   onClick={() => setCurrentIndex(index)}
                   aria-label={`Go to property image ${index + 1}`}
                   aria-current={index === currentIndex ? "true" : undefined}
-                  className={`h-2 rounded-full transition-all duration-300 ${
+                  className={`h-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] ${
                     index === currentIndex
                       ? "bg-[#0ca39a] w-6"
                       : "bg-white/70 hover:bg-white w-2"
@@ -205,12 +208,16 @@ const RealState = () => {
       </div>
 
       {/* Scrolling Logo Bar */}
-      <div className="bg-white py-6 border-t border-b border-gray-100 overflow-hidden">
+      <div
+        className="bg-white py-6 border-t border-b border-gray-100 overflow-hidden"
+        aria-label="Featured real estate brands"
+      >
         <div className="flex w-fit logo-scroll-container">
           {logoData.map((logo, index) => (
             <div
-              key={index}
+              key={`${logo.text}-${index}`}
               className="flex items-center mx-8 my-2 flex-shrink-0"
+              aria-hidden={index >= defaultLogoData.length ? "true" : undefined}
             >
               <LogoIcon Icon={logo.Icon} colorClass={logo.color} />
 
