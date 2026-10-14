@@ -47,15 +47,72 @@ const data = [
   },
 ];
 
+const propertyPages = Array.from(
+  { length: Math.ceil(data.length / 3) },
+  (_, index) => data.slice(index * 3, index * 3 + 3),
+);
+
+function PropertyCard({ item }) {
+  return (
+    <article className="h-full">
+      <div className="h-full bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-500 transform hover:-translate-y-1 border border-gray-100">
+        <div className="h-64 relative">
+          <img
+            src={item.img}
+            alt={item.title}
+            loading="lazy"
+            className="w-full h-full object-cover"
+          />
+
+          <span className="absolute top-4 left-4 bg-[#07452d] text-white text-lg font-bold px-4 py-2 rounded-xl shadow-lg">
+            {item.price}
+          </span>
+        </div>
+
+        <div className="p-6">
+          <h2 className="text-xl font-bold text-gray-900 mb-1 line-clamp-1">
+            {item.title}
+          </h2>
+
+          <p className="text-gray-500 text-sm mb-4 line-clamp-1">
+            {item.location}
+          </p>
+
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-gray-600 border-t border-gray-100 pt-4">
+            <span className="flex items-center text-sm font-medium">
+              <FaBed
+                className="w-4 h-4 mr-2 text-[#0ca39a]"
+                aria-hidden="true"
+              />
+              3 Bedrooms
+            </span>
+
+            <span className="flex items-center text-sm font-medium">
+              <FaBath
+                className="w-4 h-4 mr-2 text-[#0ca39a]"
+                aria-hidden="true"
+              />
+              3 Baths
+            </span>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
 function Latest() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % data.length);
+    setCurrentPage((prev) => (prev + 1) % propertyPages.length);
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + data.length) % data.length);
+    setCurrentPage(
+      (prev) => (prev - 1 + propertyPages.length) % propertyPages.length,
+    );
   };
 
   return (
@@ -105,63 +162,31 @@ function Latest() {
         aria-label="Latest properties"
       >
         <div
-          className="flex transition-transform duration-500 ease-in-out md:!transform-none md:grid md:grid-cols-3 gap-6"
-          style={{
-            transform: `translateX(-${currentIndex * 100}%)`,
-          }}
+          className="flex md:hidden transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {data.map((item) => (
-            <article
-              key={item.id}
-              className="w-full flex-shrink-0 md:min-w-0 md:w-auto md:flex-shrink"
+            <div key={item.id} className="w-full flex-shrink-0">
+              <PropertyCard item={item} />
+            </div>
+          ))}
+        </div>
+
+        <div
+          className="hidden md:flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentPage * 100}%)` }}
+          aria-live="polite"
+        >
+          {propertyPages.map((page, index) => (
+            <div
+              key={page[0].id}
+              className="w-full flex-shrink-0 grid grid-cols-3 gap-6"
+              aria-label={`Property group ${index + 1} of ${propertyPages.length}`}
             >
-              {/* Property Card */}
-              <div className="h-full bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition duration-500 transform hover:-translate-y-1 border border-gray-100">
-                {/* Property Image */}
-                <div className="h-64 relative">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
-
-                  <span className="absolute top-4 left-4 bg-[#07452d] text-white text-lg font-bold px-4 py-2 rounded-xl shadow-lg">
-                    {item.price}
-                  </span>
-                </div>
-
-                {/* Property Information */}
-                <div className="p-6">
-                  <h2 className="text-xl font-bold text-gray-900 mb-1 line-clamp-1">
-                    {item.title}
-                  </h2>
-
-                  <p className="text-gray-500 text-sm mb-4 line-clamp-1">
-                    {item.location}
-                  </p>
-
-                  {/* Property Details */}
-                  <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-gray-600 border-t border-gray-100 pt-4">
-                    <span className="flex items-center text-sm font-medium">
-                      <FaBed
-                        className="w-4 h-4 mr-2 text-[#0ca39a]"
-                        aria-hidden="true"
-                      />
-                      3 Bedrooms
-                    </span>
-
-                    <span className="flex items-center text-sm font-medium">
-                      <FaBath
-                        className="w-4 h-4 mr-2 text-[#0ca39a]"
-                        aria-hidden="true"
-                      />
-                      3 Baths
-                    </span>
-                  </div>
-                </div>
-              </div>
-            </article>
+              {page.map((item) => (
+                <PropertyCard key={item.id} item={item} />
+              ))}
+            </div>
           ))}
         </div>
 
