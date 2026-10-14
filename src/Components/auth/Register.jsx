@@ -7,6 +7,14 @@ function Register() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const resetForm = () => {
+    setFirstName("");
+    setLastName("");
+    setEmailOrUsername("");
+    setPassword("");
+    setConfirmPassword("");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -16,12 +24,7 @@ function Register() {
     }
 
     alert("SUCCESSFULLY REGISTERED (UI DEMO)");
-
-    setConfirmPassword("");
-    setFirstName("");
-    setPassword("");
-    setLastName("");
-    setEmailOrUsername("");
+    resetForm();
   };
 
   return (
