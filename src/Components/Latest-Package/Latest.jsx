@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 import { FaBed, FaBath } from "react-icons/fa";
 
@@ -105,6 +105,23 @@ function Latest() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
 
+  useEffect(() => {
+    const desktopQuery = window.matchMedia("(min-width: 768px)");
+
+    const syncDesktopPage = () => {
+      if (desktopQuery.matches) {
+        setCurrentPage(Math.floor(currentIndex / 3));
+      }
+    };
+
+    syncDesktopPage();
+    desktopQuery.addEventListener("change", syncDesktopPage);
+
+    return () => {
+      desktopQuery.removeEventListener("change", syncDesktopPage);
+    };
+  }, [currentIndex]);
+
   const nextSlide = () => {
     setCurrentPage((prev) => (prev + 1) % propertyPages.length);
   };
@@ -117,7 +134,6 @@ function Latest() {
 
   return (
     <main className="container mx-auto px-4 py-20">
-      {/* Section Header */}
       <div className="flex flex-col md:flex-row justify-between md:items-end mb-16 px-4 md:px-0 gap-6">
         <div className="max-w-xl">
           <p className="text-[#0ca39a] text-lg font-bold uppercase tracking-wider mb-2">
@@ -134,7 +150,6 @@ function Latest() {
           </p>
         </div>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-4 flex-shrink-0">
           <button
             type="button"
@@ -156,7 +171,6 @@ function Latest() {
         </div>
       </div>
 
-      {/* Property Slider */}
       <section
         className="relative overflow-hidden px-2"
         aria-label="Latest properties"
@@ -190,7 +204,6 @@ function Latest() {
           ))}
         </div>
 
-        {/* Mobile Navigation */}
         <div className="flex md:hidden justify-between items-center absolute inset-x-0 top-1/2 -translate-y-1/2 px-4 pointer-events-none">
           <button
             type="button"
@@ -211,7 +224,6 @@ function Latest() {
           </button>
         </div>
 
-        {/* Mobile Slide Indicator */}
         <div className="flex md:hidden justify-center gap-2 mt-6">
           {data.map((item, index) => (
             <button
