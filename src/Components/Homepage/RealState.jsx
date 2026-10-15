@@ -25,15 +25,12 @@ const defaultLogoData = [
   { text: "Modern Home Finders", color: "text-yellow-600", Icon: FaHome },
 ];
 
-// Duplicate logos for seamless scrolling
 const logoData = [...defaultLogoData, ...defaultLogoData];
 
-// Logo icon component
 const LogoIcon = ({ Icon, colorClass }) => (
   <Icon className={`w-8 h-8 ${colorClass} mr-2`} aria-hidden="true" />
 );
 
-// Previous arrow
 const ArrowBack = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +49,6 @@ const ArrowBack = () => (
   </svg>
 );
 
-// Next arrow
 const ArrowForward = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -71,12 +67,15 @@ const ArrowForward = () => (
   </svg>
 );
 
-// Main component
 const RealState = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [isPageVisible, setIsPageVisible] = useState(
+    () => document.visibilityState === "visible"
+  );
 
+  // Detect reduced-motion preference
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -92,23 +91,34 @@ const RealState = () => {
     };
   }, []);
 
-  // Move to the next slide
+  // Track whether the browser tab is visible
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      setIsPageVisible(document.visibilityState === "visible");
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+
   const nextSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === data.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  // Move to the previous slide
   const prevSlide = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? data.length - 1 : prevIndex - 1
     );
   };
 
-  // Disable autoplay when reduced motion is preferred
+  // Pause autoplay when hovered, reduced motion is preferred, or the tab is hidden
   useEffect(() => {
-    if (isPaused || prefersReducedMotion) return;
+    if (isPaused || prefersReducedMotion || !isPageVisible) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
@@ -117,14 +127,12 @@ const RealState = () => {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isPaused, prefersReducedMotion]);
+  }, [isPaused, prefersReducedMotion, isPageVisible]);
 
   return (
     <main className="min-h-screen bg-gray-50 font-sans">
-      {/* Hero Section */}
       <div className="container mx-auto px-4 pt-16 pb-24">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          {/* Content Block */}
           <div className="w-full lg:w-1/2 p-4">
             <p className="text-[#0ca39a] text-lg font-semibold uppercase tracking-widest mb-2">
               REAL ESTATE
@@ -148,7 +156,6 @@ const RealState = () => {
             </Link>
           </div>
 
-          {/* Slider Block */}
           <div
             className="w-full lg:w-1/2 relative shadow-2xl rounded-2xl overflow-hidden aspect-video"
             onMouseEnter={() => setIsPaused(true)}
@@ -181,7 +188,6 @@ const RealState = () => {
               ))}
             </div>
 
-            {/* Previous Button */}
             <div className="absolute inset-y-0 left-0 flex items-center p-4">
               <button
                 type="button"
@@ -193,7 +199,6 @@ const RealState = () => {
               </button>
             </div>
 
-            {/* Next Button */}
             <div className="absolute inset-y-0 right-0 flex items-center p-4">
               <button
                 type="button"
@@ -205,7 +210,6 @@ const RealState = () => {
               </button>
             </div>
 
-            {/* Slide Indicators */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
               {data.map((_, index) => (
                 <button
@@ -226,7 +230,6 @@ const RealState = () => {
         </div>
       </div>
 
-      {/* Scrolling Logo Bar */}
       <div
         className="bg-white py-6 border-t border-b border-gray-100 overflow-hidden"
         aria-label="Featured real estate brands"
@@ -239,7 +242,6 @@ const RealState = () => {
               aria-hidden={index >= defaultLogoData.length ? "true" : undefined}
             >
               <LogoIcon Icon={logo.Icon} colorClass={logo.color} />
-
               <span className="text-xl font-bold text-gray-700 transition duration-300">
                 {logo.text}
               </span>
