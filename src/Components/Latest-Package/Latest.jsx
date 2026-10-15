@@ -123,13 +123,23 @@ function Latest() {
   }, [currentIndex]);
 
   const nextSlide = () => {
-    setCurrentPage((prev) => (prev + 1) % propertyPages.length);
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    if (isDesktop) {
+      setCurrentPage((prev) => (prev + 1) % propertyPages.length);
+    } else {
+      setCurrentIndex((prev) => (prev + 1) % data.length);
+    }
   };
 
   const prevSlide = () => {
-    setCurrentPage(
-      (prev) => (prev - 1 + propertyPages.length) % propertyPages.length,
-    );
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    if (isDesktop) {
+      setCurrentPage(
+        (prev) => (prev - 1 + propertyPages.length) % propertyPages.length,
+      );
+    } else {
+      setCurrentIndex((prev) => (prev - 1 + data.length) % data.length);
+    }
   };
 
   return (
