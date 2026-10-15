@@ -75,6 +75,22 @@ const ArrowForward = () => (
 const RealState = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    const updateMotionPreference = () => {
+      setPrefersReducedMotion(mediaQuery.matches);
+    };
+
+    updateMotionPreference();
+    mediaQuery.addEventListener("change", updateMotionPreference);
+
+    return () => {
+      mediaQuery.removeEventListener("change", updateMotionPreference);
+    };
+  }, []);
 
   // Move to the next slide
   const nextSlide = () => {
@@ -90,9 +106,9 @@ const RealState = () => {
     );
   };
 
-  // Autoplay pauses while hovering or focusing slider controls
+  // Disable autoplay when reduced motion is preferred
   useEffect(() => {
-    if (isPaused) return;
+    if (isPaused || prefersReducedMotion) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
@@ -101,7 +117,7 @@ const RealState = () => {
     }, 4000);
 
     return () => clearInterval(interval);
-  }, [isPaused]);
+  }, [isPaused, prefersReducedMotion]);
 
   return (
     <main className="min-h-screen bg-gray-50 font-sans">
@@ -124,7 +140,6 @@ const RealState = () => {
               architecto. Discover curated listings designed for your future.
             </p>
 
-            {/* Functional Listings Navigation */}
             <Link
               to="/listings"
               className="inline-block px-8 py-3 text-lg font-bold text-white bg-[#0ca39a] rounded-full shadow-lg shadow-[#0ca39a]/50 hover:bg-[#098e85] hover:shadow-xl transition duration-300 transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]/40"
@@ -146,7 +161,11 @@ const RealState = () => {
             }}
           >
             <div
-              className="flex transition-transform duration-700 ease-in-out h-full"
+              className={`flex h-full ${
+                prefersReducedMotion
+                  ? ""
+                  : "transition-transform duration-700 ease-in-out"
+              }`}
               style={{
                 transform: `translateX(-${currentIndex * 100}%)`,
               }}
