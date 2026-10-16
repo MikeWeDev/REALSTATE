@@ -8,12 +8,17 @@ const data = [
   { img: "/neighbor6.jpg", id: 6, name: "Artisan Village", count: "95 Properties", slug: "artisan-village" },
 ];
 
-function NeighborhoodCard({ item }) {
+function NeighborhoodCard({ item, onClick }) {
+  const Component = onClick ? "button" : "a";
+  const props = onClick
+    ? { onClick: () => onClick(item), type: "button" }
+    : { href: `/neighborhoods/${item.slug}` };
+
   return (
-    <a
-      href={`/neighborhoods/${item.slug}`}
+    <Component
+      {...props}
       aria-label={`Explore ${item.name}, featuring ${item.count}`}
-      className="group relative block overflow-hidden rounded-3xl shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]"
+      className="group relative block w-full text-left overflow-hidden rounded-3xl shadow-xl transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]"
     >
       {/* Image with Zoom Effect */}
       <img
@@ -41,7 +46,7 @@ function NeighborhoodCard({ item }) {
           {item.count}
         </p>
       </div>
-    </a>
+    </Component>
   );
 }
 
