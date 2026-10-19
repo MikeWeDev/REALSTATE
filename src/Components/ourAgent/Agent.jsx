@@ -1,8 +1,4 @@
-import { FaLinkedin, FaTwitter } from 'react-icons/fa'; // Icons for social links
-
-// Define the colors for easy consistency
-const PRIMARY_COLOR = "text-[#07452d]"; // Dark green
-const ACCENT_COLOR = "text-[#0ca39a]"; // Teal accent
+import { FaLinkedin, FaTwitter, FaEnvelope } from 'react-icons/fa'; // Icons for social and contact links
 
 // --- UPDATED AGENT DATA ---
 const data = [
@@ -12,7 +8,8 @@ const data = [
       name: "Samuel Johnson",
       position: "Chief Executive Officer",
       linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com"
+      twitter: "https://twitter.com",
+      email: "mailto:samuel@example.com"
     },
     {
       img: "/agent2.jpg",
@@ -20,7 +17,8 @@ const data = [
       name: "Michaela Nguyen",
       position: "Lead Development Manager",
       linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com"
+      twitter: "https://twitter.com",
+      email: "mailto:michaela@example.com"
     },
     {
       img: "/agent3.avif",
@@ -28,7 +26,8 @@ const data = [
       name: "Jodie K. Appleby",
       position: "Senior Buying Specialist",
       linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com"
+      twitter: "https://twitter.com",
+      email: "mailto:jodie@example.com"
     },
     {
       img: "/agent4.png", 
@@ -36,14 +35,15 @@ const data = [
       name: "David Chen", 
       position: "Investment Analyst",
       linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com"
+      twitter: "https://twitter.com",
+      email: "mailto:david@example.com"
     },
 ];
 // --- END AGENT DATA ---
 
 function AgentCard({ agent }) {
   return (
-    <div 
+    <article 
       className="group relative bg-white rounded-xl shadow-xl overflow-hidden 
                  transition duration-500 transform hover:shadow-2xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-[#0ca39a]"
     >
@@ -63,18 +63,25 @@ function AgentCard({ agent }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`LinkedIn profile of ${agent.name}`}
-            className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] transition duration-300"
+            className="p-2.5 mx-1.5 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] transition duration-300"
           >
-            <FaLinkedin className="w-5 h-5" />
+            <FaLinkedin className="w-4 h-4" />
           </a>
           <a 
             href={agent.twitter}
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`Twitter profile of ${agent.name}`}
-            className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] transition duration-300"
+            className="p-2.5 mx-1.5 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] transition duration-300"
           >
-            <FaTwitter className="w-5 h-5" />
+            <FaTwitter className="w-4 h-4" />
+          </a>
+          <a 
+            href={agent.email}
+            aria-label={`Email ${agent.name}`}
+            className="p-2.5 mx-1.5 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] transition duration-300"
+          >
+            <FaEnvelope className="w-4 h-4" />
           </a>
         </div>
       </div>
@@ -84,11 +91,11 @@ function AgentCard({ agent }) {
         <h3 className="text-xl font-extrabold text-gray-900 mb-1">
           {agent.name}
         </h3>
-        <h4 className={`text-base font-semibold ${ACCENT_COLOR}`}>
+        <h4 className="text-base font-semibold text-[#0ca39a]">
           {agent.position}
         </h4>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -98,11 +105,11 @@ function Agent() {
       <div className="container mx-auto px-4 text-center">
         
         {/* --- Section Header --- */}
-        <p className={`uppercase ${ACCENT_COLOR} text-lg font-bold tracking-widest mb-3`}>
+        <p className="uppercase text-[#0ca39a] text-lg font-bold tracking-widest mb-3">
           INTRODUCE YOURSELF TO
         </p>
         <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-16 md:mb-20">
-          Meet Our Team of <span className={PRIMARY_COLOR}>Trusted Experts</span>
+          Meet Our Team of <span className="text-[#07452d]">Trusted Experts</span>
         </h2>
 
         {/* --- Agent Grid Section --- */}
