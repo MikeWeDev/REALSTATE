@@ -27,8 +27,8 @@ const serviceData = [
 function ServiceCard({ service }) {
   return (
     <article
-      className="w-full max-w-sm p-8 bg-white rounded-3xl shadow-xl border border-gray-100 
-                 transition duration-500 hover:shadow-2xl hover:border-transparent transform hover:-translate-y-2 flex flex-col items-center"
+      className="w-full max-w-sm h-full p-8 bg-white rounded-3xl shadow-xl border border-gray-100 
+                 transition duration-500 hover:shadow-2xl hover:border-transparent transform hover:-translate-y-2 flex flex-col items-center text-center"
     >
       {/* Icon Section */}
       <div className="flex justify-center mb-6">
@@ -55,7 +55,7 @@ function ServiceCard({ service }) {
 
 function Service() {
   return (
-    <div className="bg-gray-50 pt-16 pb-24 md:pt-24 md:pb-36">
+    <section className="bg-gray-50 pt-16 pb-24 md:pt-24 md:pb-36" aria-label="Our Services">
       <div className="container mx-auto px-4 text-center">
         
         {/* --- Section Header --- */}
@@ -67,14 +67,14 @@ function Service() {
         </h2>
         
         {/* --- Service Cards Container --- */}
-        <div className="flex flex-col md:flex-row items-center md:items-stretch gap-8 lg:gap-12 justify-center mt-16 md:mt-24">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 justify-items-center mt-16 md:mt-24">
           {serviceData.map((service) => (
             <ServiceCard key={service.title} service={service} />
           ))}
         </div>
 
       </div>
-    </div>
+    </section>
   )
 }
 
