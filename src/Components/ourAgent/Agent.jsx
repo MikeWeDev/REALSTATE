@@ -41,10 +41,60 @@ const data = [
 ];
 // --- END AGENT DATA ---
 
+function AgentCard({ agent }) {
+  return (
+    <div 
+      className="group relative bg-white rounded-xl shadow-xl overflow-hidden 
+                 transition duration-500 transform hover:shadow-2xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-[#0ca39a]"
+    >
+      {/* Image Container */}
+      <div className="relative h-72 w-full overflow-hidden">
+        <img
+          src={agent.img}
+          alt={agent.name}
+          loading="lazy"
+          className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+        />
+          
+        {/* Social/Link Overlay on Hover & Focus */}
+        <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition duration-500">
+          <a 
+            href={agent.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`LinkedIn profile of ${agent.name}`}
+            className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] transition duration-300"
+          >
+            <FaLinkedin className="w-5 h-5" />
+          </a>
+          <a 
+            href={agent.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Twitter profile of ${agent.name}`}
+            className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] transition duration-300"
+          >
+            <FaTwitter className="w-5 h-5" />
+          </a>
+        </div>
+      </div>
+      
+      {/* Information Block */}
+      <div className="p-5">
+        <h3 className="text-xl font-extrabold text-gray-900 mb-1">
+          {agent.name}
+        </h3>
+        <h4 className={`text-base font-semibold ${ACCENT_COLOR}`}>
+          {agent.position}
+        </h4>
+      </div>
+    </div>
+  );
+}
+
 function Agent() {
   return (
     <section className="py-20 md:py-32 bg-gray-50">
-      
       <div className="container mx-auto px-4 text-center">
         
         {/* --- Section Header --- */}
@@ -57,56 +107,8 @@ function Agent() {
 
         {/* --- Agent Grid Section --- */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
-          
           {data.map((agent) => (
-            <div 
-              key={agent.id} 
-              className="group relative bg-white rounded-xl shadow-xl overflow-hidden 
-                         transition duration-500 transform hover:shadow-2xl hover:-translate-y-1 focus-within:ring-2 focus-within:ring-[#0ca39a]"
-            >
-              
-              {/* Image Container */}
-              <div className="relative h-72 w-full overflow-hidden">
-                <img
-                  src={agent.img}
-                  alt={agent.name}
-                  loading="lazy"
-                  className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-                />
-                  
-                {/* Social/Link Overlay on Hover & Focus */}
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition duration-500">
-                  <a 
-                    href={agent.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`LinkedIn profile of ${agent.name}`}
-                    className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] transition duration-300"
-                  >
-                    <FaLinkedin className="w-5 h-5" />
-                  </a>
-                  <a 
-                    href={agent.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Twitter profile of ${agent.name}`}
-                    className="p-3 mx-2 rounded-full bg-white text-gray-800 hover:text-[#0ca39a] focus:outline-none focus:ring-2 focus:ring-[#0ca39a] transition duration-300"
-                  >
-                    <FaTwitter className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
-              
-              {/* Information Block */}
-              <div className="p-5">
-                <h3 className="text-xl font-extrabold text-gray-900 mb-1">
-                  {agent.name}
-                </h3>
-                <h4 className={`text-base font-semibold ${ACCENT_COLOR}`}>
-                  {agent.position}
-                </h4>
-              </div>
-            </div>
+            <AgentCard key={agent.id} agent={agent} />
           ))}
         </div>
 
