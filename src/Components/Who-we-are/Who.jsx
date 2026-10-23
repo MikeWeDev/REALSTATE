@@ -1,21 +1,23 @@
-import { FaHome } from "react-icons/fa"
+import { FaHome, FaHandshake } from "react-icons/fa"
 
 const featuresData = [
   {
+    icon: FaHome,
     title: "Premium Service Guaranteed",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, nobis!",
   },
   {
+    icon: FaHandshake,
     title: "Extensive Property Portfolio",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quidem!",
   },
 ];
 
-function FeatureCard({ title, description }) {
+function FeatureCard({ icon: Icon, title, description }) {
   return (
     <div className="bg-white shadow-xl hover:shadow-2xl transition duration-300 border border-gray-100 p-6 rounded-3xl flex items-start gap-x-4">
       <div className="flex-shrink-0 mt-1">
-        <FaHome className="text-3xl text-[#07452d]" />
+        <Icon className="text-3xl text-[#07452d]" />
       </div>
       <div className="flex-grow">
         <h3 className="text-xl font-bold text-[#07452d] mb-1">
@@ -58,6 +60,7 @@ function Who() {
             {featuresData.map((feature) => (
               <FeatureCard 
                 key={feature.title} 
+                icon={feature.icon}
                 title={feature.title} 
                 description={feature.description} 
               />
