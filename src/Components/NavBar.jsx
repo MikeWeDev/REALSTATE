@@ -1,6 +1,8 @@
+import { useState } from "react";
 import { FaPhone, FaRegEnvelope } from 'react-icons/fa';
 import { GoLocation } from "react-icons/go";
 import { TbHomeCheck } from "react-icons/tb";
+import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 function NavBar({ 
@@ -13,6 +15,12 @@ function NavBar({
   neighbourhoodRef,
   reviewRef
 }) {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const handleNavigation = (ref) => {
+    scrollTo(ref);
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <nav className='sticky top-0 z-50 shadow-lg'>
       
@@ -40,7 +48,7 @@ function NavBar({
 
       {/* Main Navigation */}
       <div className="bg-white p-4">
-        <div className="container mx-auto px-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 flex items-center justify-between relative">
           
           {/* Logo */}
           <div className='flex items-center'>
@@ -51,10 +59,13 @@ function NavBar({
           </div>
 
           {/* Navigation Links */}
-          <ul className='hidden md:flex items-center gap-x-8 list-none'>
+          <ul
+            id="primary-navigation"
+            className={`${isMobileMenuOpen ? "flex" : "hidden"} absolute left-0 right-0 top-full z-50 flex-col gap-y-4 bg-white px-6 py-5 shadow-lg md:static md:flex md:flex-row md:items-center md:gap-x-8 md:bg-transparent md:p-0 md:shadow-none list-none`}
+          >
             <li 
-              onClick={() => scrollTo(realStateRef)}
-              onKeyDown={(e) => e.key === "Enter" && scrollTo(realStateRef)}
+              onClick={() => handleNavigation(realStateRef)}
+              onKeyDown={(e) => e.key === "Enter" && handleNavigation(realStateRef)}
               role="button"
               tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
@@ -63,8 +74,8 @@ function NavBar({
             </li>
 
             <li 
-              onClick={() => scrollTo(whoRef)}
-              onKeyDown={(e) => e.key === "Enter" && scrollTo(whoRef)}
+              onClick={() => handleNavigation(whoRef)}
+              onKeyDown={(e) => e.key === "Enter" && handleNavigation(whoRef)}
               role="button"
               tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
@@ -73,8 +84,8 @@ function NavBar({
             </li>
 
             <li 
-              onClick={() => scrollTo(serviceRef)}
-              onKeyDown={(e) => e.key === "Enter" && scrollTo(serviceRef)}
+              onClick={() => handleNavigation(serviceRef)}
+              onKeyDown={(e) => e.key === "Enter" && handleNavigation(serviceRef)}
               role="button"
               tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
@@ -83,8 +94,8 @@ function NavBar({
             </li>
 
             <li 
-              onClick={() => scrollTo(agentRef)}
-              onKeyDown={(e) => e.key === "Enter" && scrollTo(agentRef)}
+              onClick={() => handleNavigation(agentRef)}
+              onKeyDown={(e) => e.key === "Enter" && handleNavigation(agentRef)}
               role="button"
               tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
@@ -92,8 +103,8 @@ function NavBar({
               Agents
             </li>
               <li 
-              onClick={() => scrollTo(reviewRef)}
-              onKeyDown={(e) => e.key === "Enter" && scrollTo(reviewRef)}
+              onClick={() => handleNavigation(reviewRef)}
+              onKeyDown={(e) => e.key === "Enter" && handleNavigation(reviewRef)}
               role="button"
               tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
@@ -103,8 +114,8 @@ function NavBar({
 
 
             <li 
-              onClick={() => scrollTo(listingRef)}
-              onKeyDown={(e) => e.key === "Enter" && scrollTo(listingRef)}
+              onClick={() => handleNavigation(listingRef)}
+              onKeyDown={(e) => e.key === "Enter" && handleNavigation(listingRef)}
               role="button"
               tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
@@ -113,8 +124,8 @@ function NavBar({
             </li>
 
             <li 
-              onClick={() => scrollTo(neighbourhoodRef)}
-              onKeyDown={(e) => e.key === "Enter" && scrollTo(neighbourhoodRef)}
+              onClick={() => handleNavigation(neighbourhoodRef)}
+              onKeyDown={(e) => e.key === "Enter" && handleNavigation(neighbourhoodRef)}
               role="button"
               tabIndex={0}
               className="font-medium text-gray-700 hover:text-[#0ca39a] transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
@@ -122,11 +133,20 @@ function NavBar({
               Neighborhood
             </li>
 
+            <li className="flex gap-5 border-t border-gray-100 pt-4 md:hidden">
+              <Link to="/login" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-semibold text-gray-600 hover:text-[#0ca39a]">
+                LOGIN
+              </Link>
+              <Link to="/register" onClick={() => setIsMobileMenuOpen(false)} className="text-sm font-semibold text-[#0ca39a] hover:text-[#098e85]">
+                REGISTER
+              </Link>
+            </li>
+
           
           </ul>
 
           {/* Action Buttons */}
-          <div className="flex items-center gap-x-4">
+          <div className="hidden md:flex items-center gap-x-4">
            <Link
     to="/login"
     className='text-sm font-semibold text-gray-600 hover:text-[#0ca39a] transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded'
@@ -140,6 +160,17 @@ function NavBar({
     REGISTER
   </Link>
           </div>
+
+          <button
+            type="button"
+            className="md:hidden p-2 text-gray-700 hover:text-[#0ca39a] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] rounded"
+            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="primary-navigation"
+            onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
+          >
+            {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+          </button>
 
         </div>
       </div>
