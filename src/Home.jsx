@@ -39,7 +39,7 @@ export default function Home() {
         <div ref={serviceRef}><Service /></div>
         <div ref={agentRef}><Agent /></div>
         <div ref={reviewRef}><Review /></div> 
-        <div ref={listingRef}><Latest /></div>
+        <div id="listings" ref={listingRef}><Latest /></div>
         <div ref={neighbourhoodRef}><Neighbor /></div>
       </main>
 

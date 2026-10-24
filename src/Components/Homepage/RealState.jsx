@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import {
   FaBuilding,
   FaCity,
@@ -144,16 +143,16 @@ const RealState = () => {
             </h1>
 
             <p className="text-gray-500 text-lg mb-10 max-w-lg">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa,
-              architecto. Discover curated listings designed for your future.
+              Explore carefully selected homes and find a property that fits
+              your lifestyle, budget, and next chapter.
             </p>
 
-            <Link
-              to="/listings"
+            <a
+              href="#listings"
               className="inline-block px-8 py-3 text-lg font-bold text-white bg-[#0ca39a] rounded-full shadow-lg shadow-[#0ca39a]/50 hover:bg-[#098e85] hover:shadow-xl transition duration-300 transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]/40"
             >
               Explore Listings
-            </Link>
+            </a>
           </div>
 
           <div
