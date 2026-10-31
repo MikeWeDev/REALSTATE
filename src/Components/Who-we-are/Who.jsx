@@ -4,12 +4,12 @@ const featuresData = [
   {
     icon: FaHome,
     title: "Premium Service Guaranteed",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, nobis!",
+    description: "From first viewing to final signature, we guide every step with transparent advice and responsive support.",
   },
   {
     icon: FaHandshake,
     title: "Extensive Property Portfolio",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, quidem!",
+    description: "Explore a curated mix of homes, investment opportunities, and neighbourhoods selected to match your goals.",
   },
 ];
 
@@ -52,7 +52,7 @@ function Who() {
             Assisting individuals in locating the <span className="text-[#0ca39a]">appropriate</span> real estate
           </h1>
           <p className="max-w-xl text-gray-600 text-base sm:text-lg mb-8 sm:mb-12">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos blanditiis ipsam obcaecati amet quaerat ad porro nam odio dolorum libero?
+            We help buyers, sellers, and investors make confident decisions with local insight, tailored guidance, and a strong network of trusted professionals.
           </p>
 
           {/* Feature Cards Container */}
