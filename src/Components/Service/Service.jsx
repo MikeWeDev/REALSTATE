@@ -1,6 +1,7 @@
 import { IoSearch } from "react-icons/io5"
 import { FaHouse } from "react-icons/fa6"
 import { FaDollarSign } from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 // Define the service data to easily map over
 const serviceData = [
@@ -63,7 +64,7 @@ function Service() {
           OUR SERVICES
         </p>
         <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 max-w-2xl mx-auto">
-          Providing specialized solutions for all your real estate needs.
+          Tailored real-estate guidance that helps you move with confidence.
         </h2>
         
         {/* --- Service Cards Container --- */}
@@ -71,6 +72,15 @@ function Service() {
           {serviceData.map((service) => (
             <ServiceCard key={service.title} service={service} />
           ))}
+        </div>
+
+        <div className="mt-12 md:mt-16 flex justify-center">
+          <Link
+            to="/register"
+            className="inline-flex items-center justify-center rounded-full bg-[#07452d] px-7 py-3 text-base font-semibold text-white shadow-lg shadow-[#07452d]/20 transition duration-300 hover:bg-[#0ca39a] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]/30"
+          >
+            Book a Free Consultation
+          </Link>
         </div>
 
       </div>
