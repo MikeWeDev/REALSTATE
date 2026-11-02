@@ -34,13 +34,13 @@ export default function Home() {
       />
 
       <main>
-        <div ref={realStateRef}><RealState /></div>
-        <div ref={whoRef}><Who /></div>
-        <div ref={serviceRef}><Service /></div>
-        <div ref={agentRef}><Agent /></div>
-        <div ref={reviewRef}><Review /></div> 
+        <div id="home" ref={realStateRef}><RealState /></div>
+        <div id="about" ref={whoRef}><Who /></div>
+        <div id="services" ref={serviceRef}><Service /></div>
+        <div id="agents" ref={agentRef}><Agent /></div>
+        <div id="reviews" ref={reviewRef}><Review /></div>
         <div id="listings" ref={listingRef}><Latest /></div>
-        <div ref={neighbourhoodRef}><Neighbor /></div>
+        <div id="neighborhood" ref={neighbourhoodRef}><Neighbor /></div>
       </main>
 
       <Footer />

@@ -1,106 +1,91 @@
 import { TbHomeCheck } from "react-icons/tb";
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa"; // Imported popular social icons
+import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa";
+
+const footerLinks = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Listings", href: "#listings" },
+  { label: "Neighborhood", href: "#neighborhood" },
+  { label: "Contact", href: "#contact" },
+];
 
 function Footer() {
   return (
-    // 🎨 Use a darker background (e.g., dark blue/gray) for a more premium look
-    <footer className="bg-gray-900 text-gray-300 py-12 px-6">
+    <footer id="contact" className="bg-gray-900 text-gray-300 py-12 px-6">
       <div className="max-w-7xl mx-auto flex flex-wrap justify-between gap-10 border-b border-gray-700 pb-10">
-        {/* === Left Section: Logo & About === */}
         <div className="w-full sm:w-1/2 md:w-1/4 lg:w-[300px]">
           <h1 className="text-3xl font-extrabold text-white mb-4">
-            <span className="icon flex items-center">
-              {/* 💡 Brighter accent color and better size for impact */}
-              <TbHomeCheck 
-                size={40} 
-                className='bg-teal-500 text-gray-900 p-2 rounded-lg' // Changed color and size
+            <span className="flex items-center">
+              <TbHomeCheck
+                size={40}
+                className="bg-[#0ca39a] text-gray-900 p-2 rounded-lg"
               />
-              <span className='text-3xl ml-2 tracking-wider'>
-                MIKE
-              </span>
+              <span className="text-3xl ml-2 tracking-wider">MIKE</span>
             </span>
           </h1>
           <p className="text-sm leading-relaxed my-5 text-gray-400">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime
-            veritatis obcaecati facilis cupiditate quisquam incidunt saepe cum ex rerum ducimus?
+            We help buyers, sellers, and investors find opportunity in every market move with honest advice, local insight, and a smooth path to closing.
           </p>
-          
-          {/* 🔗 Social Icons: Using imported react-icons for consistency & color */}
-          <div className="social-icons flex space-x-3 mt-6" role="list">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-8 h-8 p-1.5 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]">
+
+          <div className="flex space-x-3 mt-6" role="list">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-8 h-8 p-1.5 rounded-full bg-blue-600 text-white hover:bg-blue-700 transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]">
               <FaFacebookF />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-8 h-8 p-1.5 rounded-full bg-cyan-400 text-white hover:bg-cyan-500 transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="w-8 h-8 p-1.5 rounded-full bg-cyan-400 text-white hover:bg-cyan-500 transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]">
               <FaTwitter />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-8 h-8 p-1.5 rounded-full bg-pink-600 text-white hover:bg-pink-700 transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-8 h-8 p-1.5 rounded-full bg-pink-600 text-white hover:bg-pink-700 transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]">
               <FaInstagram />
             </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-8 h-8 p-1.5 rounded-full bg-red-600 text-white hover:bg-red-700 transition duration-300 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]">
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-8 h-8 p-1.5 rounded-full bg-red-600 text-white hover:bg-red-700 transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a]">
               <FaYoutube />
             </a>
           </div>
         </div>
 
-        {/* === Center Section: Useful Links === */}
         <div className="w-1/2 sm:w-1/4 md:w-1/6">
           <h2 className="mb-4 text-xl font-bold text-white uppercase tracking-wider">
             Useful Links
           </h2>
-          <div className="links space-y-2">
-            {['Home', 'About', 'Services', 'Listings', 'Neighborhood', 'Contact'].map((link) => (
-              // 💅 Added hover effect and smaller text for list items
-              <button 
-                key={link}
-                onClick={(e) => {
-                  e.preventDefault();
-                  console.log(`Navigate to ${link}`);
-                }}
-                className="block w-full text-left text-sm text-gray-400 hover:text-teal-500 transition duration-300 bg-none border-none cursor-pointer p-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
+          <div className="space-y-2">
+            {footerLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="block text-sm text-gray-400 hover:text-[#0ca39a] transition duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0ca39a] focus-visible:ring-offset-2 rounded"
               >
-                {link}
-              </button>
+                {link.label}
+              </a>
             ))}
           </div>
         </div>
 
-        {/* === Right Section: Contact === */}
         <div className="w-full sm:w-1/2 md:w-1/4 lg:w-[300px]">
           <h2 className="mb-4 text-xl font-bold text-white uppercase tracking-wider">
             Contact Us
           </h2>
-          <div className="contact flex flex-col space-y-3">
-            {/* 📍 Use list items or consistent paragraphs for clean structure */}
-            <p className="text-sm font-medium text-gray-400">
-              A.A Ethiopia, 622 Path Plaza 
-            </p>
-            <p className="text-sm font-medium text-gray-400">
-              +25 15 345 12 345
-            </p>
-            <p className="text-sm font-medium text-gray-400 hover:text-teal-500 transition duration-300">
+          <div className="flex flex-col space-y-3">
+            <p className="text-sm font-medium text-gray-400">Addis Ababa, Ethiopia</p>
+            <a href="tel:+2511534512345" className="text-sm font-medium text-gray-400 hover:text-[#0ca39a] transition duration-300">
+              +251 15 345 12 345
+            </a>
+            <a href="mailto:mikyasnegash2@gmail.com" className="text-sm font-medium text-gray-400 hover:text-[#0ca39a] transition duration-300">
               mikyasnegash2@gmail.com
-            </p>
+            </a>
           </div>
         </div>
       </div>
-      
-      {/* === Bottom Copyright Bar === */}
+
       <div className="max-w-7xl mx-auto pt-6">
         <div className="lg:flex justify-between items-center text-sm">
-          {/* 📝 Stronger Copyright Text */}
           <p className="text-center lg:text-left text-gray-500 mb-4 lg:mb-0">
             &copy; {new Date().getFullYear()} <strong className="text-gray-400">MIKE</strong> - All Rights Reserved.
           </p>
-          
-          {/* 📜 Legal Links with proper spacing and divider */}
+
           <ul className="flex flex-wrap justify-center space-x-4 text-gray-500">
             {['Terms and Conditions', 'Privacy Policy', 'Disclaimer'].map((link) => (
-              <li 
-                key={link} 
-                role="button"
-                tabIndex={0}
-                className="cursor-pointer hover:text-teal-500 transition duration-300"
-              >
+              <li key={link} className="hover:text-[#0ca39a] transition duration-300">
                 {link}
               </li>
             ))}
