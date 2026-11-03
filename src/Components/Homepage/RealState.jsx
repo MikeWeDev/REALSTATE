@@ -147,12 +147,33 @@ const RealState = () => {
               your lifestyle, budget, and next chapter.
             </p>
 
-            <a
-              href="#listings"
-              className="inline-block px-8 py-3 text-lg font-bold text-white bg-[#0ca39a] rounded-full shadow-lg shadow-[#0ca39a]/50 hover:bg-[#098e85] hover:shadow-xl transition duration-300 transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]/40"
-            >
-              Explore Listings
-            </a>
+            <div className="flex flex-wrap items-center gap-4 mb-8">
+              <a
+                href="#listings"
+                className="inline-block px-8 py-3 text-lg font-bold text-white bg-[#0ca39a] rounded-full shadow-lg shadow-[#0ca39a]/50 hover:bg-[#098e85] hover:shadow-xl transition duration-300 transform hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]/40"
+              >
+                Explore Listings
+              </a>
+              <a
+                href="#contact"
+                className="inline-block px-6 py-3 text-lg font-semibold text-[#07452d] bg-white border border-[#0ca39a]/20 rounded-full shadow-sm hover:bg-[#eafaf8] transition duration-300 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]/20"
+              >
+                Talk to an Agent
+              </a>
+            </div>
+
+            <div className="grid grid-cols-3 gap-4 max-w-lg">
+              {[
+                { value: "320+", label: "Homes sold" },
+                { value: "4.9/5", label: "Client rating" },
+                { value: "20+", label: "Prime locations" },
+              ].map((item) => (
+                <div key={item.label} className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
+                  <div className="text-2xl font-extrabold text-[#07452d]">{item.value}</div>
+                  <div className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-gray-500">{item.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div
