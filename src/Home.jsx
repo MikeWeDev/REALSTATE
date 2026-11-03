@@ -37,6 +37,35 @@ export default function Home() {
         <div id="home" ref={realStateRef}><RealState /></div>
         <div id="about" ref={whoRef}><Who /></div>
         <div id="services" ref={serviceRef}><Service /></div>
+
+        <section className="bg-[#f4fbfa] py-16 px-4">
+          <div className="container mx-auto rounded-[2rem] border border-[#0ca39a]/15 bg-white px-6 py-8 shadow-lg shadow-[#0ca39a]/5 md:px-10 md:py-12">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#0ca39a]">Ready to move?</p>
+                <h2 className="mt-2 text-3xl font-extrabold text-gray-900 md:text-4xl">
+                  Let’s find a home that fits your next chapter.
+                </h2>
+              </div>
+
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center justify-center rounded-full bg-[#07452d] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#07452d]/20 transition duration-300 hover:bg-[#0ca39a] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]/30"
+                >
+                  Book a Call
+                </a>
+                <a
+                  href="tel:+251564789132"
+                  className="inline-flex items-center justify-center rounded-full border border-[#0ca39a]/25 bg-[#f0fdfa] px-6 py-3 text-sm font-semibold text-[#07452d] transition duration-300 hover:border-[#0ca39a] hover:bg-[#e7faf7] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]/20"
+                >
+                  Call Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <div id="agents" ref={agentRef}><Agent /></div>
         <div id="reviews" ref={reviewRef}><Review /></div>
         <div id="listings" ref={listingRef}><Latest /></div>
