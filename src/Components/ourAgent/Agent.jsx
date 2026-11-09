@@ -7,6 +7,7 @@ const data = [
       id: 1,
       name: "Samuel Johnson",
       position: "Chief Executive Officer",
+      specialty: "Luxury sales & strategic advisory",
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:samuel@example.com"
@@ -16,6 +17,7 @@ const data = [
       id: 2,
       name: "Michaela Nguyen",
       position: "Lead Development Manager",
+      specialty: "Property development & investment guidance",
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:michaela@example.com"
@@ -25,6 +27,7 @@ const data = [
       id: 3,
       name: "Jodie K. Appleby",
       position: "Senior Buying Specialist",
+      specialty: "Home matching & negotiation strategy",
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:jodie@example.com"
@@ -34,6 +37,7 @@ const data = [
       id: 4, 
       name: "David Chen", 
       position: "Investment Analyst",
+      specialty: "Portfolio growth & market analysis",
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
       email: "mailto:david@example.com"
@@ -94,6 +98,16 @@ function AgentCard({ agent }) {
         <h4 className="text-base font-semibold text-[#0ca39a]">
           {agent.position}
         </h4>
+        <p className="mt-2 text-sm text-gray-600">
+          {agent.specialty}
+        </p>
+
+        <a
+          href={agent.email}
+          className="mt-4 inline-flex w-full items-center justify-center rounded-full bg-[#07452d] px-4 py-2.5 text-sm font-semibold text-white transition duration-300 hover:bg-[#0ca39a] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]/30"
+        >
+          Contact Agent
+        </a>
       </div>
     </article>
   );
