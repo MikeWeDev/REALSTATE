@@ -72,6 +72,23 @@ export default function Home() {
         <div id="neighborhood" ref={neighbourhoodRef}><Neighbor /></div>
       </main>
 
+      <div className="fixed inset-x-4 bottom-4 z-50 md:hidden">
+        <div className="mx-auto flex max-w-md items-center justify-center gap-2 rounded-full border border-[#0ca39a]/20 bg-white/90 p-2 shadow-2xl shadow-slate-900/10 backdrop-blur-md">
+          <a
+            href="tel:+251564789132"
+            className="flex-1 rounded-full bg-[#07452d] px-4 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-[#07452d]/20"
+          >
+            Call
+          </a>
+          <a
+            href="#contact"
+            className="flex-1 rounded-full border border-[#0ca39a]/20 bg-[#ecfdfb] px-4 py-3 text-center text-sm font-semibold text-[#07452d]"
+          >
+            Message
+          </a>
+        </div>
+      </div>
+
       <Footer />
     </>
   );
