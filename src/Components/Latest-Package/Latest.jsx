@@ -7,43 +7,61 @@ const data = [
     img: "/latest-property1.avif",
     id: 1,
     price: "$5,900/mo",
+    badge: "Featured",
     title: "Modern Downtown Apartment",
-    location: "123 Main St, Cityville, USA",
+    location: "Bole Road, Addis Ababa",
+    bedrooms: 3,
+    baths: 2,
   },
   {
     img: "/latest-property2.jpg",
     id: 2,
-    price: "$5,900/mo",
+    price: "$8,450/mo",
+    badge: "Luxury",
     title: "Luxury Horizon Villa",
-    location: "456 Ocean Ave, Beachside, USA",
+    location: "Kazanchis, Addis Ababa",
+    bedrooms: 4,
+    baths: 3,
   },
   {
     img: "/latest-property3.jpeg",
     id: 3,
-    price: "$5,900/mo",
+    price: "$4,350/mo",
+    badge: "New",
     title: "Suburban Family Home",
-    location: "789 Pine Rd, Greenfield, USA",
+    location: "Gulele, Addis Ababa",
+    bedrooms: 3,
+    baths: 2,
   },
   {
     img: "/latest-property4.jpg",
     id: 4,
-    price: "$5,900/mo",
+    price: "$9,200/mo",
+    badge: "Penthouse",
     title: "Penthouse Suite",
-    location: "101 High St, Skyline, USA",
+    location: "Meskel Square, Addis Ababa",
+    bedrooms: 3,
+    baths: 3,
   },
   {
     img: "/latest-property5.png",
     id: 5,
-    price: "$5,900/mo",
+    price: "$3,600/mo",
+    badge: "Cozy",
     title: "Cozy Lakefront Cottage",
-    location: "202 Lake Dr, Fairview, USA",
+    location: "Tulu Dimtu, Addis Ababa",
+    bedrooms: 2,
+    baths: 2,
   },
   {
     img: "/latest-property6.jpg",
     id: 6,
-    price: "$5,900/mo",
+    price: "$6,750/mo",
+    badge: "Executive",
     title: "Urban Executive Loft",
-    location: "303 Market St, Metro, USA",
+    location: "CMC, Addis Ababa",
+    bedrooms: 3,
+    baths: 2,
   },
 ];
 
@@ -67,6 +85,9 @@ function PropertyCard({ item }) {
           <span className="absolute top-4 left-4 bg-[#07452d] text-white text-lg font-bold px-4 py-2 rounded-xl shadow-lg">
             {item.price}
           </span>
+          <span className="absolute top-4 right-4 rounded-full bg-white/90 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.12em] text-[#07452d] shadow-sm">
+            {item.badge}
+          </span>
         </div>
 
         <div className="p-6">
@@ -84,7 +105,7 @@ function PropertyCard({ item }) {
                 className="w-4 h-4 mr-2 text-[#0ca39a]"
                 aria-hidden="true"
               />
-              3 Bedrooms
+              {item.bedrooms} Bedrooms
             </span>
 
             <span className="flex items-center text-sm font-medium">
@@ -92,9 +113,16 @@ function PropertyCard({ item }) {
                 className="w-4 h-4 mr-2 text-[#0ca39a]"
                 aria-hidden="true"
               />
-              3 Baths
+              {item.baths} Baths
             </span>
           </div>
+
+          <a
+            href="#contact"
+            className="mt-5 inline-flex w-full items-center justify-center rounded-full border border-[#0ca39a]/20 bg-[#ecfdfb] px-4 py-2.5 text-sm font-semibold text-[#07452d] transition duration-300 hover:border-[#0ca39a] hover:bg-[#dffaf6] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]/20"
+          >
+            Schedule a Visit
+          </a>
         </div>
       </div>
     </article>
