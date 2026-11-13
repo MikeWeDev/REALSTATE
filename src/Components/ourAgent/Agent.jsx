@@ -122,12 +122,16 @@ function Agent() {
         <p className="uppercase text-[#0ca39a] text-lg font-bold tracking-widest mb-3">
           INTRODUCE YOURSELF TO
         </p>
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-16 md:mb-20">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
           Meet Our Team of <span className="text-[#07452d]">Trusted Experts</span>
         </h2>
 
+        <p className="mx-auto mt-5 max-w-2xl text-base text-gray-600 md:text-lg">
+          Our advisors combine local market insight, negotiation experience, and tailored guidance to help you buy, sell, and invest with confidence.
+        </p>
+
         {/* --- Agent Grid Section --- */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {data.map((agent) => (
             <AgentCard key={agent.id} agent={agent} />
           ))}
