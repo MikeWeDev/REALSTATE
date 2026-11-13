@@ -1,11 +1,11 @@
 // Define the data for the neighborhood cards (moved to the top for React best practice)
 const data = [
-  { img: "/neighbor1.webp", id: 1, name: "City Center Lofts", count: "260 Properties", slug: "city-center-lofts" },
-  { img: "/neighbor2.webp", id: 2, name: "Sunset Hills Estates", count: "145 Properties", slug: "sunset-hills-estates" },
-  { img: "/neighbor3.avif", id: 3, name: "The Waterfront District", count: "312 Properties", slug: "waterfront-district" },
-  { img: "/neighbor4.jpg", id: 4, name: "Green Valley Commons", count: "198 Properties", slug: "green-valley-commons" },
-  { img: "/neighbor5.jpeg", id: 5, name: "Downtown Towers", count: "400+ Properties", slug: "downtown-towers" },
-  { img: "/neighbor6.jpg", id: 6, name: "Artisan Village", count: "95 Properties", slug: "artisan-village" },
+  { img: "/neighbor1.webp", id: 1, name: "Bole Heights", count: "260 Properties", slug: "bole-heights" },
+  { img: "/neighbor2.webp", id: 2, name: "Kazanchis Gardens", count: "145 Properties", slug: "kazanchis-gardens" },
+  { img: "/neighbor3.avif", id: 3, name: "Lideta View", count: "312 Properties", slug: "lideta-view" },
+  { img: "/neighbor4.jpg", id: 4, name: "CMC Green Valley", count: "198 Properties", slug: "cmc-green-valley" },
+  { img: "/neighbor5.jpeg", id: 5, name: "Central Business District", count: "400+ Properties", slug: "central-business-district" },
+  { img: "/neighbor6.jpg", id: 6, name: "Ayer Tena Village", count: "95 Properties", slug: "ayer-tena-village" },
 ];
 
 function NeighborhoodCard({ item, onClick }) {
@@ -72,6 +72,15 @@ function Neighbor() {
           {data.map((item) => (
             <NeighborhoodCard key={item.id} item={item} />
           ))}
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center rounded-full bg-[#07452d] px-7 py-3 text-base font-semibold text-white shadow-lg shadow-[#07452d]/20 transition duration-300 hover:bg-[#0ca39a] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0ca39a]/30"
+          >
+            Discover Your Ideal Area
+          </a>
         </div>
       </div>
       
